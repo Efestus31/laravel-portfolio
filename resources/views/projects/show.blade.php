@@ -1,18 +1,18 @@
-@extends('layouts.posts')
+@extends('layouts.projects')
 
-@section('title', $post->title)
+@section('title', $project->title)
 
 @section('content')
     <div class="mb-4">
         <h2>
-            -{{ $post->author }}
+            - {{ $project->name }}
         </h2>
         <small>
-            {{ $post->category }}
+            {{ $project->period }}
         </small>
         <section>
             <p>
-                {{ $post->content }}
+                {{ $project->summary }}
             </p>
         </section>
     </div>

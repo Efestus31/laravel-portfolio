@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified'])
 
 
 
-Route::resource("posts", PostController::class);
+Route::resource("projects", projectController::class)
+    ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
