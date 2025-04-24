@@ -3,6 +3,12 @@
 @section('title', 'tutti i progetti')
 
 @section('content')
+
+<div class="d-flex py-4 gap-2">
+    <a class="btn btn-proimary btn-outline" href="{{ route('projects.create', $project) }}">Nuovo Progetto</a>
+   
+</div>
+
     <table>
         <thead>
             <tr>

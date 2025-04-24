@@ -24,7 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("projects.create");
     }
 
     /**
@@ -32,7 +32,20 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // dd($request);
+       $data = $request->all();
+
+       $newProject = new Project();
+
+       $newProject->name = $data['name'];
+       $newProject->client = $data['client'];
+       $newProject->period = $data['period'];
+       $newProject->summary = $data['summary'];
+
+       $newProject->save();
+
+       return redirect()->route("projects.show", $newProject);
+
     }
 
     /**
@@ -48,24 +61,36 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        
+        return view("projects.edit", compact("project"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+        //edit the info inside the project
+        $project->name = $data['name'];
+        $project->client = $data['client'];
+        $project->period = $data['period'];
+        $project->summary = $data['summary'];
+
+        $project->update();
+
+        return redirect()->route("projects.show");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
+    
     {
-        //
+        $project->delete();
+        return redirect()->route("projects.index");
     }
 }
