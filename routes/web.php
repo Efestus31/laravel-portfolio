@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])
 
 
 
-Route::resource("projects", projectController::class)
-    ->middleware(['auth', 'verified']);
+Route::resource("projects", projectController::class);
+    //->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

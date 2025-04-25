@@ -5,11 +5,11 @@
 @section('content')
 
 <div class="d-flex py-4 gap-2">
-    <a class="btn btn-proimary btn-outline" href="{{ route('projects.create', $project) }}">Nuovo Progetto</a>
+    <a class="btn btn-outline-primary" href="{{ route('projects.create') }}">Nuovo Progetto</a>
    
 </div>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Nome</th>

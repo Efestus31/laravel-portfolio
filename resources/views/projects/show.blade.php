@@ -4,29 +4,32 @@
 
 @section('content')
     <div class="d-flex py-4 gap-2">
-        <a class="btn btn-warning btn-outline" href="{{ route('projects.edit', $project) }}">Modifica</a>
-        <button type="button" class="btn btn-warning btn-outline" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <a class="btn btn btn-outline-warning" href="{{ route('projects.edit', $project) }}">Modifica</a>
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Elimina
         </button>
     </div>
 
-    
+
     <div class="mb-4">
-        <h2>
+        <h2 class="mb-3">
             - {{ $project->name }}
         </h2>
-        <small>
-            {{ $project->period }}
-        </small>
-        <small>
-            {{ $project->client }}
-        </small>
+    
+        <ul class="list-unstyled mb-4">
+            <li><strong>Cliente:</strong> {{ $project->client }}</li>
+            <li><strong>Periodo:</strong> {{ $project->period }}</li>
+            <li><strong>Tecnologia:</strong> {{ $project->type->name }}</li>
+        </ul>
+    
         <section>
-            <p>
+            <h5>Riassunto</h5>
+            <p class="text-muted">
                 {{ $project->summary }}
             </p>
         </section>
     </div>
+    
     <!-- Modal -->
     <div class="modal fade modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-center">

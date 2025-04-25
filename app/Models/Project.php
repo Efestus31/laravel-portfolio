@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    //
+    //colleghiamo i tipi
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
