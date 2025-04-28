@@ -16,35 +16,25 @@ class TypesTableSeeder extends Seeder
     public function run(Faker $faker): void
     {
         $types = [
-            'PHP',
-            'Laravel',
-            'MySQL',
-            'JavaScript',
-            'HTML',
-            'CSS',
-            'SASS',
-            'Blade Templates',
-            'jQuery',
-            'AJAX',
-            'JSON',
-            'Git',
-            'Composer',
-            'PHPUnit',
-            'Docker',
-            'Node.js',
-            'Express.js',
-            'React',
-            'Java',
-            'JDBC',
-            'Spring Boot',
-            'Vue.js',
-            'Tailwind CSS',
-            'Bootstrap',
+            'Web Development',
+            'Mobile App Development',
+            'Database Management',
+            'Software Engineering',
+            'Game Development',
+            'UI/UX Design',
+            'Data Science',
+            'Machine Learning',
+            'Cybersecurity',
+            'Cloud Computing',
+            'Blockchain',
+            'DevOps',
+            'AI/Automation',
+            'IoT (Internet of Things)',
+            'Digital Marketing'
         ];
 
         foreach ($types as $type) {
             Type::updateOrCreate(
-                ['slug' => $type],
                 [
                     'name' => $type,
                     'category' => $faker->sentence(),

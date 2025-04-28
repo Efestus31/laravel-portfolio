@@ -20,7 +20,6 @@
             @foreach ($types as $type)
             <tr>
                 <td>{{ $type->name }}</td>
-                <td>{{ $type->slug }}</td>
                 <td>{{ $type->category }}</td>
                 <td>
                     <a href="{{ route("types.show", $type->id) }}">Visualizza</a>

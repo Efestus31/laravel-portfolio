@@ -16,10 +16,6 @@
             - {{ $type->name }}
         </h2>
     
-        <ul class="list-unstyled mb-4">
-            <li><strong>Denominazione:</strong> {{ $type->slug }}</li>
-        </ul>
-    
         <section>
             <h5>Categoria:</h5>
             <p class="text-muted">

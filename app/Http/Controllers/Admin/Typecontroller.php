@@ -36,7 +36,6 @@ class TypeController extends Controller
        $newType = new Type();
 
        $newType->name = $data['name'];
-       $newType->slug = $data['slug'];
        $newType->category = $data['category'];
 
        $newType->save();
@@ -69,7 +68,6 @@ class TypeController extends Controller
         $data = $request->all();
         //edit the info inside the type
         $type->name = $data['name'];
-        $type->slug = $data['slug'];
         $type->category = $data['category'];
 
         $type->update();

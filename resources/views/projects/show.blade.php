@@ -19,7 +19,7 @@
         <ul class="list-unstyled mb-4">
             <li><strong>Cliente:</strong> {{ $project->client }}</li>
             <li><strong>Periodo:</strong> {{ $project->period }}</li>
-            <li><strong>Tecnologia:</strong> {{ $project->type->name }}</li>
+            <li><strong>Categoria:</strong> {{ $project->type->name }}</li>
         </ul>
     
         <section>

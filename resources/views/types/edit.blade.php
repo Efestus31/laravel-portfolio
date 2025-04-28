@@ -11,17 +11,12 @@
         @method("PUT")
 
         <div class="mb-3">
-            <label for="name" class="form-label">Nome tecnologia</label>
+            <label for="name" class="form-label">Nome:</label>
             <input type="text" name="name" id="name" class="form-control" value="{{ $type->name }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="slug" class="form-label">Diminutivo tecnologia</label>
-            <input type="text" name="slug" id="slug" class="form-control" value="{{ $type->slug }}" required>
-        </div>
-
         <div class="mb-4">
-            <label for="category" class="form-label">Categoria Tecnologia</label>
+            <label for="category" class="form-label">Categoria:</label>
             <textarea name="category" id="category" rows="5" class="form-control" required>{{ $type->category }}</textarea>
         </div>
 

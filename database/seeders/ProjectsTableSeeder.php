@@ -22,7 +22,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->client = $faker->name();
             $newProject->period = $faker->dateTimeBetween('now', '+1 week')->format('Y-m-d'); 
             $newProject->summary = $faker->paragraph(12);
-            $newProject->type_id = rand(1, 24);
+            $newProject->type_id = rand(1, 15);
             $newProject->save();
 
         }
