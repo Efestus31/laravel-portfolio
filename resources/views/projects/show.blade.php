@@ -15,6 +15,14 @@
         <h2 class="mb-3">
             - {{ $project->name }}
         </h2>
+        <small>
+            Technologies:
+            @forelse ($project->technologies as $technology)
+               <span class="badge" style="background-color: {{ $technologies->color }}">{{ $technologies->name }}</span> 
+               @empty
+               nessuno
+            @endforelse  
+        </small>
     
         <ul class="list-unstyled mb-4">
             <li><strong>Cliente:</strong> {{ $project->client }}</li>
